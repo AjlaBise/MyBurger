@@ -82,8 +82,12 @@ class BurgerBuilder extends Component {
     purshaseHandler = () => {
         this.setState({purchasing:true})
     }
+    purshaseCancleHandler = () => {
+        this.setState({purchasing:false})
+    }
+
     render() {
-        //Ukoliko nema sta da se ukloni, blokiramo btn Less
+      
         const disableInfo = {
             ...this.state.ingredients
         };
@@ -93,7 +97,7 @@ class BurgerBuilder extends Component {
         }
         return (
             <Aux>   
-                <Modal show={this.state.purchasing}>
+                <Modal show={this.state.purchasing} modelClosed={this.purshaseCancleHandler}>
                 <OrderSummary ingredients={this.state.ingredients} />
                 </Modal>
                 <Burger ingredients={this.state.ingredients} />
