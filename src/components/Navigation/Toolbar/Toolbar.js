@@ -6,8 +6,11 @@ import classes from './Toolbar.css';
 const Toolbar = () => (
     <header className={classes.Toolbar}>
         <div>MENU</div>
+        <div className={classes.Logo}>
         <Logo/>
-        <nav>
+        </div>
+        
+        <nav className={classes.DesktopOnly}>
            <NavigationItems/>
         </nav>
     </header>
